@@ -30,7 +30,7 @@ public class OrderDetailDAOImpl implements OrderDetailDAO{
 
 //                //Search & Update Item
             ItemDAOImpl itemDAO = new ItemDAOImpl();
-            ItemDTO itemDTO = itemDAO.findItem(detail.getItemCode());
+            ItemDTO itemDTO = itemDAO.searchItem(detail.getItemCode());
             itemDTO.setQtyOnHand(itemDTO.getQtyOnHand() - detail.getQty());
 
             if (!itemDAO.updateItem(itemDTO)) {
